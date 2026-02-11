@@ -12,7 +12,12 @@ import { authMiddleware } from "./middleware/auth.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://velora-ai-zeta.vercel.app",
+  }),
+);
+
 app.use(express.json());
 
 // Connect MongoDB
