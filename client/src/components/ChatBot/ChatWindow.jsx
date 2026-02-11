@@ -50,7 +50,7 @@ export default function ChatWindow({ onClose }) {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch("http://localhost:5001/api/chat", {
+      const response = await fetch("https://velora-ai.onrender.com/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
