@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
