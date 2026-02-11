@@ -50,14 +50,17 @@ export default function ChatWindow({ onClose }) {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch("https://velora-ai.onrender.com/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(token && { Authorization: `Bearer ${token}` }),
+      const response = await fetch(
+        "https://velora-ai-u6d4.onrender.com/api/chat",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            ...(token && { Authorization: `Bearer ${token}` }),
+          },
+          body: JSON.stringify({ messages: newMessages }),
         },
-        body: JSON.stringify({ messages: newMessages }),
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Unauthorized or server error");
