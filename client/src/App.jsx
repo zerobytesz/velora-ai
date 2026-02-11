@@ -111,53 +111,6 @@ transition-colors duration-300
           )}
         </div>
       </nav>
-      {/* CREATORS SECTION */}
-      <section className="px-8 py-24 bg-white dark:bg-neutral-950 transition-colors">
-        <div className="max-w-5xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-semibold mb-4 tracking-tight">
-            Built by the Creator
-          </h2>
-          <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl mx-auto">
-            Velora AI was designed and developed with a focus on performance,
-            elegance, and modern AI integration.
-          </p>
-        </div>
-
-        <div className="flex justify-center">
-          <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-10 w-[380px] shadow-sm hover:shadow-lg transition duration-300">
-            {/* Avatar */}
-            <div className="w-20 h-20 rounded-full bg-black text-white flex items-center justify-center text-2xl font-semibold mx-auto mb-6">
-              RT
-            </div>
-
-            {/* Name */}
-            <h3 className="text-xl font-semibold mb-1">Raghav Tyagi</h3>
-
-            {/* Role */}
-            <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">
-              Full Stack Developer • AI Enthusiast
-            </p>
-
-            {/* Links */}
-            <div className="flex justify-center gap-4 text-sm">
-              <a
-                href="https://github.com/zerobytesz"
-                target="_blank"
-                className="px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="#"
-                className="px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                Portfolio
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* HERO */}
       <section className="px-8 pt-28 pb-20 text-center max-w-4xl mx-auto">
@@ -229,6 +182,53 @@ transition-colors duration-300
           </div>
         </section>
       )}
+      {/* CREATORS SECTION */}
+      <section className="px-8 py-24 bg-white dark:bg-neutral-950 transition-colors">
+        <div className="max-w-5xl mx-auto text-center mb-16">
+          <h2 className="text-3xl font-semibold mb-4 tracking-tight">
+            Built by the Creator
+          </h2>
+          <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl mx-auto">
+            Velora AI was designed and developed with a focus on performance,
+            elegance, and modern AI integration.
+          </p>
+        </div>
+
+        <div className="flex justify-center">
+          <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-10 w-[380px] shadow-sm hover:shadow-lg transition duration-300">
+            {/* Avatar */}
+            <div className="w-20 h-20 rounded-full bg-black text-white flex items-center justify-center text-2xl font-semibold mx-auto mb-6">
+              RT
+            </div>
+
+            {/* Name */}
+            <h3 className="text-xl font-semibold mb-1">Raghav Tyagi</h3>
+
+            {/* Role */}
+            <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">
+              Full Stack Developer • AI Enthusiast
+            </p>
+
+            {/* Links */}
+            <div className="flex justify-center gap-4 text-sm">
+              <a
+                href="https://github.com/zerobytesz"
+                target="_blank"
+                className="px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+              >
+                GitHub
+              </a>
+
+              <a
+                href="#"
+                className="px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+              >
+                Portfolio
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FEATURES */}
       <section className="px-8 py-24 bg-neutral-50 dark:bg-neutral-800 transition-colors">
