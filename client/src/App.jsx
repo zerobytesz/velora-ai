@@ -9,7 +9,7 @@ export default function App() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [showAuth, setShowAuth] = useState(false);
 
-  // 🌙 DARK MODE STATE
+  // DARK MODE STATE
   const [dark, setDark] = useState(() => {
     const saved = localStorage.getItem("theme");
     if (saved) return saved === "dark";
@@ -64,7 +64,7 @@ export default function App() {
       overflow-hidden
     "
     >
-      {/* 🌌 Subtle Dark Glow */}
+      {/* Subtle Dark Glow */}
       <div className="pointer-events-none absolute inset-0 -z-10 dark:bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.06),_transparent_60%)]" />
 
       {/* NAVBAR */}
@@ -82,7 +82,7 @@ transition-colors duration-300
         <h1 className="text-xl font-semibold tracking-tight">Velora AI</h1>
 
         <div className="flex items-center gap-4">
-          {/* 🌙 DARK MODE TOGGLE */}
+          {/* DARK MODE TOGGLE */}
           <button
             onClick={() => setDark(!dark)}
             className="relative w-14 h-7 flex items-center bg-neutral-300 dark:bg-neutral-700 rounded-full p-1 transition-colors duration-300"
@@ -150,30 +150,42 @@ transition-colors duration-300
               {isRegister ? "Create your account" : "Welcome back"}
             </h3>
 
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full mb-4 px-4 py-3 border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20"
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-            />
-
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full mb-4 px-4 py-3 border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20"
-              onChange={(e) => setForm({ ...form, password: e.target.value })}
-            />
-
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-black text-white py-3 rounded-xl hover:bg-neutral-800 transition"
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+              className="space-y-4"
             >
-              {isRegister ? "Register" : "Login"}
-            </button>
+              <input
+                type="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20"
+                required
+              />
+
+              <input
+                type="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={(e) => setForm({ ...form, password: e.target.value })}
+                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20"
+                required
+              />
+
+              <button
+                type="submit"
+                className="w-full bg-black text-white py-3 rounded-xl hover:bg-neutral-800 transition"
+              >
+                {isRegister ? "Register" : "Login"}
+              </button>
+            </form>
 
             <p
               onClick={() => setIsRegister(!isRegister)}
-              className="mt-4 text-sm text-neutral-500 dark:text-neutral-400 cursor-pointer text-center hover:text-neutral-800 dark:hover:text-neutral-200 transition"
+              className="mt-6 text-sm text-neutral-500 dark:text-neutral-400 cursor-pointer text-center hover:text-neutral-800 dark:hover:text-neutral-200 transition"
             >
               {isRegister
                 ? "Already have an account? Login"
@@ -182,6 +194,7 @@ transition-colors duration-300
           </div>
         </section>
       )}
+
       {/* CREATORS SECTION */}
       <section className="px-8 py-24 bg-white dark:bg-neutral-950 transition-colors">
         <div className="max-w-5xl mx-auto text-center mb-16">

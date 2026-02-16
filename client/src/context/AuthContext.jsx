@@ -10,8 +10,15 @@ export const AuthProvider = ({ children }) => {
     else localStorage.removeItem("token");
   }, [token]);
 
-  const login = (jwt) => setToken(jwt);
-  const logout = () => setToken(null);
+  const login = (token) => {
+    localStorage.setItem("token", token);
+    window.location.reload(); // 🔥 force reload
+  };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.reload(); // 🔥 force reload
+  };
 
   return (
     <AuthContext.Provider value={{ token, login, logout }}>
